@@ -1,1 +1,4 @@
-# using_the_git_commandline_lab1
+# using\_the\_git\_commandline\_lab1
+
+Моя перша робота з git 
+
