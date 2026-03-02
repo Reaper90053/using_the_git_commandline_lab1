@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1772468168 source:c:\users\stasg\downloads\librarylab2\main.cpp
+	"Reader.h"
+
+1772467737 c:\users\stasg\downloads\librarylab2\reader.h
+	<string>
+
+1772470230 source:c:\users\stasg\downloads\librarylab2\reader.cpp
+	"Reader.h"
+	<iostream>
+
+1772470449 source:c:\users\stasg\downloads\librarylab2\book.cpp
+	"Book.h"
+	<iostream>
+
+1772467737 c:\users\stasg\downloads\librarylab2\book.h
+	<string>
+
+1772470610 source:c:\users\stasg\downloads\librarylab2\library.cpp
+	"Library.h"
+	<iostream>
+
+1772468086 c:\users\stasg\downloads\librarylab2\library.h
+	<string>
+
