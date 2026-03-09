@@ -11,8 +11,10 @@ private:
 
 public:
     Library();
-    Library(string name, string addr = "Невідома адреса");
+    Library(string name, string addr = "Unknown address");
     ~Library();
+
+    static int getLibraryCount();
 
     void printInfo() const;
 };
