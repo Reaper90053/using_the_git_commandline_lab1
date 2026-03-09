@@ -1,16 +1,16 @@
 #include "Reader.h"
 #include <iostream>
 
-Reader::Reader() : Reader("Невідомий", 0) {}
+Reader::Reader() : Reader("Unknown", 0) {}
 
 Reader::Reader(string n, int id)
     : name(n), readerID(id) {}
 
 Reader::~Reader() {
-    cout << "Об'єкт Reader знищено\n";
+    cout << "Object Reader destroyed\n";
 }
 
 void Reader::printInfo() const {
-    cout << "Ім'я: " << name
+    cout << "Name: " << name
          << "\nID: " << readerID << "\n\n";
 }
