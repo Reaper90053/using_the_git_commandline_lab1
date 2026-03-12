@@ -27,11 +27,11 @@ Book b1("Kobzar","Shevchenko",1840);
     // static
     cout << "Books created: " << Book::getBookCount() << endl;
 
-    // оператор +
+    // РѕРїРµСЂР°С‚РѕСЂ +
     Book b5 = b2 + b3;
     b5.printInfo();
 
-    // унарний оператор
+    // СѓРЅР°СЂРЅРёР№ РѕРїРµСЂР°С‚РѕСЂ
     Book b6 = -b5;
     b6.printInfo();
 
