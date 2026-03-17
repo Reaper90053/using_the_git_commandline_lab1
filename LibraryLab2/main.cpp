@@ -1,15 +1,20 @@
 #include <iostream>
-#include <windows.h>
 #include "Book.h"
+#include "EBook.h"
 #include "Reader.h"
 #include "Library.h"
+#include "PrintedBook.h"
 
 using namespace std;
 
 int main() {
-    SetConsoleCP(65001);
-    SetConsoleOutputCP(65001);
-Book b1("Kobzar","Shevchenko",1840);
+    Book b12("Clean Code", "Martin", 2008);
+
+    EBook e1("C++ Primer", "Lippman", 2012, 5.4);
+
+    PrintedBook p1("The Hobbit", "Tolkien", 1937, 310);
+
+    Book b1("Kobzar","Shevchenko",1840);
 
     // copy constructor
     Book b2 = b1;
@@ -43,6 +48,15 @@ Book b1("Kobzar","Shevchenko",1840);
 
     Library l1;
     Library l2("Central Library", "Chernivtsi city");
+
+    cout << endl;
+    b1.printInfo();
+
+    cout << endl;
+    e1.printInfo();
+
+    cout << endl;
+    p1.printInfo();
 
     b1.printInfo();
     b2.printInfo();
