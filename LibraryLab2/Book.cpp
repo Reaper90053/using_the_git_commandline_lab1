@@ -1,27 +1,34 @@
 #include "Book.h"
+#include <iostream>
+using namespace std;
 
 int Book::bookCount = 0;
 
-Book::Book() : title("Unknown"), author("Unknown"), year(0) {
+Book::Book() : Item("Unknown"), author("Unknown"), year(0) {
     bookCount++;
 }
 
 Book::Book(string title, string author, int year)
-    : title(title), author(author), year(year) {
+        : Item(title)
+{
+    this->author = author;
+    this->year = year;
     bookCount++;
 }
 
 Book::Book(const Book& other)
-    : title(other.title), author(other.author), year(other.year) {
+    : Item(other.title), author(other.author), year(other.year) {
     bookCount++;
 }
 
 Book::Book(Book&& other)
-    : title(move(other.title)), author(move(other.author)), year(other.year) {
+    : Item(move(other.title)), author(move(other.author)), year(other.year) {
     other.year = 0;
 }
 
-Book::~Book() {}
+Book::~Book() {
+    cout << "Book destructor" << endl;
+}
 
 void Book::setTitle(string title) {
     this->title = title;

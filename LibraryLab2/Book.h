@@ -1,15 +1,17 @@
 #ifndef BOOK_H
 #define BOOK_H
 
+#pragma once
+
 #include <string>
+#include "Item.h"
 #include <iostream>
 
 using namespace std;
 
-class Book {
+class Book : public Item {
 
-private:
-    string title;
+protected:
     string author;
     int year;
 
@@ -19,11 +21,11 @@ public:
 
     Book();
     Book(string title, string author, int year);
+    ~Book();
 
     Book(const Book& other); // Copy constructor
     Book(Book&& other);      // Move constructor
 
-    ~Book();
 
     void printInfo() const;
 
@@ -31,11 +33,11 @@ public:
 
     static int getBookCount();
 
-    // оператори
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     Book operator+(const Book& other);
     Book operator-();
 
-    // дружні оператори
+    // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     friend ostream& operator<<(ostream& os, const Book& book);
     friend istream& operator>>(istream& is, Book& book);
 };
