@@ -12,4 +12,10 @@ add_executable(LibraryLab2
         Library.h
         main.cpp
         Reader.cpp
-        Reader.h)
+        Reader.h
+        Item.h
+        Item.cpp
+        EBook.h
+        EBook.cpp
+        PrintedBook.h
+        PrintedBook.cpp)

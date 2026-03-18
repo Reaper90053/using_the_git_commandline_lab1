@@ -10,9 +10,9 @@ private:
     int readerID;
 
 public:
-    Reader();                          // конструктор
-    Reader(string n, int id = 0);      // перевантажений
-    ~Reader();                         // деструктор
+    Reader();                          // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    Reader(string n, int id = 0);      // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+    ~Reader();                         // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
     void printInfo() const;
 };
