@@ -25,7 +25,7 @@ public:
 
     Book(const Book& other); // Copy constructor
     Book(Book&& other);      // Move constructor
-
+    Book& operator=(const Book& other);
 
     void printInfo() const;
 
