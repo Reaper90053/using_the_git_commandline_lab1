@@ -7,14 +7,34 @@
 
 using namespace std;
 
+void show(Book& b) {
+    b.printInfo();
+}
+
 int main() {
-    Book b12("Clean Code", "Martin", 2008);
+    Book b("Kobzar","Shevchenko",1840);
+    EBook eb("C++ Primer","Lippman",2012,5.4);
+
+    Book* ptr1 = &eb;
+    ptr1->printInfo(); // 5 лаба  тепер virtual → EBook
 
     EBook e1("C++ Primer", "Lippman", 2012, 5.4);
 
     PrintedBook p1("The Hobbit", "Tolkien", 1937, 310);
+    show(e1);
+    show(p1); // 5 лаба
+
 
     Book b1("Kobzar","Shevchenko",1840);
+
+    Book* ptr;
+
+    ptr = &e1;
+    ptr->printInfo();
+
+    PrintedBook pb("Hobbit","Tolkien",1937,310);
+    ptr = &pb;
+    ptr->printInfo(); // 5 лаба (Book* ptr)
 
     // copy constructor
     Book b2 = b1;
@@ -66,6 +86,17 @@ int main() {
 
     l1.printInfo();
     l2.printInfo();
+
+    ptr->printInfo(); // 5 лаба
+
+    Printable* p;
+
+    p = &eb;
+    p->printData();
+
+    p = &pb;
+
+    p->printData(); // 5 лаба
 
     return 0;
 }
