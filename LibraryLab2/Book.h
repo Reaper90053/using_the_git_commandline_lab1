@@ -21,13 +21,16 @@ public:
 
     Book();
     Book(string title, string author, int year);
-    ~Book();
+
 
     Book(const Book& other); // Copy constructor
     Book(Book&& other);      // Move constructor
     Book& operator=(const Book& other);
 
-    void printInfo() const;
+
+    virtual void printInfo() const;  // до 5 лаби
+    virtual ~Book();
+    virtual void getType() const; // 5 лаба
 
     void setTitle(string title);
 
@@ -40,6 +43,7 @@ public:
     // ����� ���������
     friend ostream& operator<<(ostream& os, const Book& book);
     friend istream& operator>>(istream& is, Book& book);
+
 };
 
 #endif

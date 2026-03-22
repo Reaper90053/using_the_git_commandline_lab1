@@ -34,6 +34,10 @@ void Book::setTitle(string title) {
     this->title = title;
 }
 
+void Book::getType() const {
+    cout << "This is Book" << endl;
+}
+
 void Book::printInfo() const {
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
