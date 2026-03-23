@@ -11,10 +11,17 @@ PrintedBook::~PrintedBook() {
     cout << "PrintedBook destructor" << endl;
 }
 
-void PrintedBook::printInfo() {
+void PrintedBook::getType() const { // 5 лаба
+    cout << "This is PrintedBook" << endl;
+}
+
+void PrintedBook::printInfo() const {
     cout << "Printed book:" << endl;
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
     cout << "Year: " << year << endl;
     cout << "Pages: " << pages << endl;
+}
+void PrintedBook::printData() const {
+    cout << "Printable PrintedBook" << endl;
 }
