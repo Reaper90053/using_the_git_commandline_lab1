@@ -18,4 +18,6 @@ add_executable(LibraryLab2
         EBook.h
         EBook.cpp
         PrintedBook.h
-        PrintedBook.cpp)
+        PrintedBook.cpp
+        Printable.h
+)
