@@ -33,11 +33,17 @@ EBook& EBook::operator=(const EBook& other) {
 EBook::~EBook() {
     cout << "EBook destructor" << endl;
 }
+void EBook::printData() const {
+    cout << "Printable EBook" << endl;
+}
 
-void EBook::printInfo() {
+void EBook::printInfo() const {
     cout << "EBook:" << endl;
     cout << "Title: " << title << endl;
     cout << "Author: " << author << endl;
     cout << "Year: " << year << endl;
     cout << "File size: " << fileSize << " MB" << endl;
+}
+void EBook::getType() const {
+    cout << "This is EBook" << endl;
 }

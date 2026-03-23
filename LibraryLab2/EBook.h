@@ -1,10 +1,11 @@
 #pragma once
 #include "Book.h"
+#include "Printable.h"
 #include <string>
 
 using namespace std;
 
-class EBook : public Book {
+class EBook : public Book, public Printable {
 private:
     double fileSize;
 
@@ -17,5 +18,7 @@ public:
 
     ~EBook();
 
-    void printInfo();
+    void printInfo() const override;
+    void getType() const override;
+    void printData() const override;// до 5 лаби
 };
