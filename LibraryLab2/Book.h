@@ -32,6 +32,10 @@ public:
     virtual ~Book();
     virtual void getType() const; // 5 лаба
 
+    string getTitle() const;
+    string getAuthor() const;
+    int getYear() const;// 6 лаба
+
     void setTitle(string title);
 
     static int getBookCount();

@@ -48,6 +48,10 @@ int Book::getBookCount() {
     return bookCount;
 }
 
+string Book::getTitle() const { return title; }
+string Book::getAuthor() const { return author; }
+int Book::getYear() const { return year; }// 6 лаба
+
 Book Book::operator+(const Book& other) {
     return Book(title + " & " + other.title, author, year);
 }
