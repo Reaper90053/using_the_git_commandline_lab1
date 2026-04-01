@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "Book.h"
 #include "EBook.h"
 #include "Reader.h"
@@ -7,11 +8,104 @@
 
 using namespace std;
 
+void logAction(string action) {
+    ofstream file("log.txt", ios::app);
+    file << action << endl;
+}
+
 void show(Book& b) {
     b.printInfo();
 }
 
-int main() {
+void menu() {
+    cout << "1. Login as Admin\n";
+    cout << "2. User mode\n";
+    cout << "0. Exit\n";//6 лаба
+}
+
+bool adminLogin() {
+    string pass;
+    cout << "Enter password: ";
+    cin >> pass;
+
+    return pass == "1234";
+}//6 лаба
+
+void adminMenu(Library& lib) {
+    int choice;
+
+     do {
+        cout << "1. Add Book\n";
+        cout << "2. Show Books\n";
+        cout << "0. Exit\n";
+        cin >> choice;
+
+        if (choice == 1) {
+            string title, author;
+            int year;
+
+            cout << "Title: ";
+            cin >> title;
+            cout << "Author: ";
+            cin >> author;
+
+            try {
+                cout << "Year: ";
+                cin >> year;
+
+                if (year < 0) throw runtime_error("Invalid year");
+
+            } catch (exception& e) {
+                cout << e.what() << endl;
+                continue;
+            }
+
+            lib.addBook(make_shared<Book>(title, author, year));
+            logAction("Admin added book: " + title);
+        }
+
+        if (choice == 2) {
+            lib.showBooks();
+        }
+
+    } while (choice != 0);
+}// 6 лаба
+
+void userMenu(Library& lib) {
+    cout << "Available books:\n";
+    lib.showBooks();//6 лаба
+}
+
+int main() { //6 лаба
+    Library lib;
+
+    lib.loadFromFile();
+
+    int choice;
+
+    do {
+        menu();
+        cin >> choice;
+
+        if (choice == 1) {
+            if (adminLogin()) {
+                adminMenu(lib);
+                lib.saveToFile();
+            } else {
+                cout << "Wrong password\n";
+            }
+        }
+
+        if (choice == 2) {
+            userMenu(lib);
+        }
+
+    } while (choice != 0);
+
+    return 0;
+}//6 лаба
+
+int main1() {
     Book b("Kobzar","Shevchenko",1840);
     EBook eb("C++ Primer","Lippman",2012,5.4);
 
@@ -23,7 +117,6 @@ int main() {
     PrintedBook p1("The Hobbit", "Tolkien", 1937, 310);
     show(e1);
     show(p1); // 5 лаба
-
 
     Book b1("Kobzar","Shevchenko",1840);
 
